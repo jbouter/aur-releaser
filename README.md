@@ -46,7 +46,7 @@ This workflow is heavily based on [KSXGitHub/github-actions-deploy-aur](https://
 ## Example usage
 
 ```yaml
-name: aur-publish
+name: aur-release
 
 on:
   push:
@@ -54,13 +54,13 @@ on:
       - '*'
 
 jobs:
-  aur-publish:
+  aur-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
-      - name: Publish AUR package
-        uses: KSXGitHub/github-actions-deploy-aur@<TAG>
+      - name: Release AUR package
+        uses: jbouter/aur-releaser@<TAG>
         with:
           pkgname: my-awesome-package
           pkgbuild: ./PKGBUILD
