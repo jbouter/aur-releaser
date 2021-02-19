@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk update --no-cache \
  && apk add --no-cache openssh-client openssh-keygen shadow pacman runuser git \
- grep \
+ grep binutils gcc \
  && rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /entrypoint.sh
