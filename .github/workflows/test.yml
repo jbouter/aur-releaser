@@ -12,7 +12,7 @@ name: test
 jobs:
 
   hadolint:
-    name: hadolint
+    name: Hadolint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,9 +22,9 @@ jobs:
           dockerfile: Dockerfile
 
   shellcheck:
-    name: ShellCheck
+    name: Shellcheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run ShellCheck
+      - name: Run Shellcheck
         uses: ludeeus/action-shellcheck@master
