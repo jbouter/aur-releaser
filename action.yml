@@ -1,0 +1,41 @@
+name: 'Release AUR package'
+description: 'Release an AUR package'
+author: jbouter
+branding:
+  color: blue
+  icon: package
+inputs:
+  pkgname:
+    description: 'AUR package name'
+    required: true
+  pkgbuild:
+    description: 'Path to PKGBUILD file'
+    required: true
+  commit_username:
+    description: 'The username to use when creating the new commit'
+    required: true
+  commit_email:
+    description: 'The email to use when creating the new commit'
+    required: true
+  ssh_private_key:
+    description: 'Your private key with access to AUR package.'
+    required: true
+  commit_message:
+    description: 'Commit message to use when creating the new commit'
+    required: false
+    default: 'Update PKGBUILD and .SRCINFO with GitHub Actions'
+  allow_empty_commits:
+    description: 'Allow empty commits, i.e. commits with no change.'
+    required: false
+    default: 'true'
+  force_push:
+    description: 'Use --force when push to the AUR.'
+    required: false
+    default: 'false'
+  ssh_keyscan_types:
+    description: 'Comma-separated list of types to use when adding aur.archlinux.org to known hosts'
+    required: false
+    default: 'rsa,dsa,ecdsa,ed25519'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
