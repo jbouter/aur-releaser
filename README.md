@@ -1,6 +1,10 @@
 # aur-releaser
 Allow releasing packages to the AUR
 
+## Copyright
+
+All original work by [KSXGitHub](https://github.com/KSXGitHub) was released under the [MIT license](https://github.com/KSXGitHub/github-actions-deploy-aur/blob/master/LICENSE.md). All of the added work is released under the GPL license
+
 ## Notes
 
 This workflow is heavily based on [KSXGitHub/github-actions-deploy-aur](https://github.com/KSXGitHub/github-actions-deploy-aur)
