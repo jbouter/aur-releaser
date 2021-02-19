@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update --no-cache \
- && apk add --no-cache openssh-client openssh-keygen shadow pacman \
+ && apk add --no-cache openssh-client openssh-keygen shadow pacman runuser \
  && rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /entrypoint.sh
