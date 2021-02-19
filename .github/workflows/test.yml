@@ -19,7 +19,7 @@ jobs:
       - name: Run hadolint
         uses: brpaz/hadolint-action@v1.3.1
         with:
-          dockerfile: Docker
+          dockerfile: Dockerfile
 
   shellcheck:
     name: ShellCheck
