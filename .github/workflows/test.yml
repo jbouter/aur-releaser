@@ -1,0 +1,29 @@
+---
+
+name: test
+
+'on':
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 6 * * *'
+
+jobs:
+
+  hadolint:
+    name: hadolint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: brpaz/hadolint-action@v1.2.1
+        with:
+          dockerfile: Docker
+
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
