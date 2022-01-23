@@ -1,5 +1,6 @@
 FROM alpine:3
 
+# hadolint ignore=DL3018
 RUN apk add --no-cache openssh-client openssh-keygen shadow pacman pacman-makepkg \
  runuser git grep binutils gcc
 
